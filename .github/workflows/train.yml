@@ -21,6 +21,13 @@ jobs:
         pip install numpy
         pip install scikit-learn
 
-    - run: |
+    - name: Run MLflow Project
+      run: |
+        echo "Root Folder"
+        ls -la
+
+        echo "MLProject Folder"
+        ls -la MLProject
+
         cd MLProject
-        mlflow run .
+        mlflow run . --env-manager local
